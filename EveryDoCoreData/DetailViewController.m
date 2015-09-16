@@ -14,7 +14,8 @@
 @property (strong, nonatomic) IBOutlet UIImageView *detailPriorityImage;
 @property (strong, nonatomic) IBOutlet UILabel *detailTitleLabel;
 @property (strong, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
-@property (strong, nonatomic) IBOutlet UIButton *detailCompleteButton;
+@property (weak, nonatomic) IBOutlet UILabel *detailCompleteLabel;
+
 
 @end
 
@@ -38,10 +39,10 @@
         self.detailDescriptionLabel.text = self.detailItem.details;
         self.detailPriorityImage.image = [UIImage imageNamed:[[NSString stringWithFormat:@"%ld", (long)self.detailItem.priority]stringByAppendingString:@"StarsSmall"]];
         if (self.detailItem.isComplete) {
-            [self.detailCompleteButton setTitle:@"\u2611" forState:UIControlStateNormal];
+            self.detailCompleteLabel.text = @"\u2611";
         }
         else {
-            [self.detailCompleteButton setTitle:@"\u2610" forState:UIControlStateNormal];
+            self.detailCompleteLabel.text = @"\u2610";
             
         }
     }
@@ -58,16 +59,12 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)toggleCompletion:(UIButton *)sender {
-    if (self.detailItem.isComplete) {
-        self.detailItem.isComplete = NO;
-        [self.detailCompleteButton setTitle:@"\u2610" forState:UIControlStateNormal];
-    }
-    else {
-        self.detailItem.isComplete = YES;
-        [self.detailCompleteButton setTitle:@"\u2611" forState:UIControlStateNormal];
+#pragma mark - Segues
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"showEdit"]) {
+        
     }
 }
-
 
 @end
