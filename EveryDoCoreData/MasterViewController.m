@@ -9,6 +9,7 @@
 #import "MasterViewController.h"
 #import "DetailViewController.h"
 #import "ToDo.h"
+#import "AddNewToDoVC.h"
 
 @interface MasterViewController ()
 
@@ -35,14 +36,21 @@
 }
 
 - (void)insertNewObject:(id)sender {
+    AddNewToDoVC *addNewVC = (AddNewToDoVC *)[self.storyboard instantiateViewControllerWithIdentifier: @"AddNewToDoVC"];
+    addNewVC.delegate = self;
+    [self presentViewController:addNewVC animated:YES completion:nil];
+        
+    }
+
+-(void)sendTitle:(NSString *)title Description:(NSString *)description Priority:(NSInteger)priority Completion:(BOOL)isComplete {
     NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
     NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
     ToDo *newToDo = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
-        
+    
     // If appropriate, configure the new managed object.
     // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
     [newToDo setValue:[NSDate date] forKey:@"timeStamp"];
-        
+    
     // Save the context.
     NSError *error = nil;
     if (![context save:&error]) {
@@ -51,7 +59,9 @@
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     }
+
 }
+
 
 #pragma mark - Segues
 
