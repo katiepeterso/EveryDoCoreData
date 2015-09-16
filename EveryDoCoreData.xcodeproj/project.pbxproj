@@ -16,6 +16,7 @@
 		AA4F5F741BA9EF6A0032AF01 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA4F5F731BA9EF6A0032AF01 /* Images.xcassets */; };
 		AA4F5F771BA9EF6A0032AF01 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA4F5F751BA9EF6A0032AF01 /* LaunchScreen.xib */; };
 		AA4F5F831BA9EF6A0032AF01 /* EveryDoCoreDataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4F5F821BA9EF6A0032AF01 /* EveryDoCoreDataTests.m */; };
+		AA6647991BA9F5CC00FC64BE /* ToDo.m in Sources */ = {isa = PBXBuildFile; fileRef = AA6647981BA9F5CC00FC64BE /* ToDo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,8 @@
 		AA4F5F7C1BA9EF6A0032AF01 /* EveryDoCoreDataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EveryDoCoreDataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA4F5F811BA9EF6A0032AF01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA4F5F821BA9EF6A0032AF01 /* EveryDoCoreDataTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EveryDoCoreDataTests.m; sourceTree = "<group>"; };
+		AA6647971BA9F5CC00FC64BE /* ToDo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToDo.h; sourceTree = "<group>"; };
+		AA6647981BA9F5CC00FC64BE /* ToDo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +95,8 @@
 				AA4F5F6B1BA9EF6A0032AF01 /* MasterViewController.m */,
 				AA4F5F6D1BA9EF6A0032AF01 /* DetailViewController.h */,
 				AA4F5F6E1BA9EF6A0032AF01 /* DetailViewController.m */,
+				AA6647971BA9F5CC00FC64BE /* ToDo.h */,
+				AA6647981BA9F5CC00FC64BE /* ToDo.m */,
 				AA4F5F701BA9EF6A0032AF01 /* Main.storyboard */,
 				AA4F5F731BA9EF6A0032AF01 /* Images.xcassets */,
 				AA4F5F751BA9EF6A0032AF01 /* LaunchScreen.xib */,
@@ -232,6 +237,7 @@
 				AA4F5F661BA9EF6A0032AF01 /* AppDelegate.m in Sources */,
 				AA4F5F631BA9EF6A0032AF01 /* main.m in Sources */,
 				AA4F5F691BA9EF6A0032AF01 /* EveryDoCoreData.xcdatamodeld in Sources */,
+				AA6647991BA9F5CC00FC64BE /* ToDo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,6 +432,7 @@
 				AA4F5F881BA9EF6A0032AF01 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AA4F5F891BA9EF6A0032AF01 /* Build configuration list for PBXNativeTarget "EveryDoCoreDataTests" */ = {
 			isa = XCConfigurationList;
@@ -434,6 +441,7 @@
 				AA4F5F8B1BA9EF6A0032AF01 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
