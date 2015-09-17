@@ -14,6 +14,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *addNewPriorityField;
 @property (strong, nonatomic) IBOutlet UIButton *addNewCompletionButton;
 @property (nonatomic) BOOL completionButtonChecked;
+@property (weak, nonatomic) IBOutlet UIButton *addOrEditButton;
 
 @end
 
@@ -30,6 +31,13 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    if (self.isEdit) {
+        [self editDetailItem:self.editItem];
+         self.isEdit = NO;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -65,6 +73,10 @@
     [self.delegate sendTitle:self.addNewTitleField.text Description:self.addNewDescriptionView.text Priority:self.addNewPriorityField.text.integerValue Completion:self.completionButtonChecked];
     [sender resignFirstResponder];
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)editDetailItem:(ToDo *)toDo {
+    [self.addOrEditButton setTitle:@"Update To Do" forState:UIControlStateNormal];
 }
 
 @end

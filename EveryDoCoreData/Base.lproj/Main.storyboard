@@ -270,10 +270,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s9S-5T-hQI">
-                                                    <rect key="frame" x="505" y="5" width="87" height="30"/>
+                                                    <rect key="frame" x="449" y="5" width="143" height="30"/>
                                                     <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="87" id="TDD-fm-3CI"/>
+                                                        <constraint firstAttribute="width" constant="143" id="TDD-fm-3CI"/>
                                                     </constraints>
                                                     <state key="normal" title="Add To Do">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -303,6 +303,7 @@
                         <outlet property="addNewDescriptionView" destination="EgO-Oq-8hE" id="jcF-eC-5zG"/>
                         <outlet property="addNewPriorityField" destination="HR7-9v-BVd" id="czZ-gE-Gib"/>
                         <outlet property="addNewTitleField" destination="LsC-rR-0GR" id="Sg2-Wf-492"/>
+                        <outlet property="addOrEditButton" destination="s9S-5T-hQI" id="WXX-vm-7N0"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HPd-Oh-mwc" userLabel="First Responder" sceneMemberID="firstResponder"/>

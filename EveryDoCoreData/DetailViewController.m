@@ -8,6 +8,7 @@
 
 #import "DetailViewController.h"
 #import "ToDo.h"
+#import "AddNewToDoVC.h"
 
 @interface DetailViewController ()
 
@@ -63,8 +64,10 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"showEdit"]) {
-        
+        AddNewToDoVC *editViewController = segue.destinationViewController;
+        editViewController.editItem = self.detailItem;
+        editViewController.isEdit = YES;
+
     }
 }
-
 @end
