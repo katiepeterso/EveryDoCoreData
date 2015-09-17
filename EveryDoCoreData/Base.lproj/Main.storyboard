@@ -59,6 +59,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Master" id="tQt-TN-PWz"/>
+                    <connections>
+                        <segue destination="ff5-ra-tkG" kind="show" identifier="showAdd" id="7u0-h3-GRa"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Cn-md-YlS" sceneMemberID="firstResponder"/>
             </objects>
@@ -311,4 +314,7 @@
             <point key="canvasLocation" x="605" y="783"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="7u0-h3-GRa"/>
+    </inferredMetricsTieBreakers>
 </document>

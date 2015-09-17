@@ -67,7 +67,7 @@
         AddNewToDoVC *editViewController = segue.destinationViewController;
         editViewController.editItem = self.detailItem;
         editViewController.isEdit = YES;
-
+        editViewController.delegate = self.detailDelegate;
     }
 }
 @end

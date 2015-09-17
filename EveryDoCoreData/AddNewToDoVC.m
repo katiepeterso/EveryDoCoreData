@@ -7,6 +7,7 @@
 //
 
 #import "AddNewToDoVC.h"
+#import "ToDo.h"
 
 @interface AddNewToDoVC ()
 @property (strong, nonatomic) IBOutlet UITextField *addNewTitleField;
@@ -72,11 +73,23 @@
 - (IBAction)addToDo:(UIButton *)sender {
     [self.delegate sendTitle:self.addNewTitleField.text Description:self.addNewDescriptionView.text Priority:self.addNewPriorityField.text.integerValue Completion:self.completionButtonChecked];
     [sender resignFirstResponder];
-    [self dismissViewControllerAnimated:YES completion:nil];
+//    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 - (void)editDetailItem:(ToDo *)toDo {
     [self.addOrEditButton setTitle:@"Update To Do" forState:UIControlStateNormal];
+    self.addOrEditButton.userInteractionEnabled = YES;
+    self.addNewTitleField.text = self.editItem.name;
+    self.addNewDescriptionView.text = self.editItem.details;
+    self.addNewPriorityField.text = [@(self.editItem.priority) stringValue];
+    if (self.editItem.isComplete) {
+        [self.addNewCompletionButton setTitle:@"\u2611" forState:UIControlStateNormal];
+    }
+    else {
+        [self.addNewCompletionButton setTitle:@"\u2610" forState:UIControlStateNormal];
+    }
+
 }
 
 @end

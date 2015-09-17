@@ -37,8 +37,8 @@
 - (void)insertNewObject:(id)sender {
     AddNewToDoVC *addNewVC = (AddNewToDoVC *)[self.storyboard instantiateViewControllerWithIdentifier: @"AddNewToDoVC"];
     addNewVC.delegate = self;
-    [self presentViewController:addNewVC animated:YES completion:nil];
-        
+//    [self presentViewController:addNewVC animated:YES completion:nil];
+    [self.navigationController pushViewController:addNewVC animated:YES];
     }
 
 -(void)sendTitle:(NSString *)title Description:(NSString *)description Priority:(NSInteger)priority Completion:(BOOL)isComplete {
@@ -71,6 +71,7 @@
         [[segue destinationViewController] setDetailItem:toDo];
     }
 }
+
 
 #pragma mark - Table View
 
@@ -108,6 +109,7 @@
         }
     }
 }
+
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     ToDo *toDo = [self.fetchedResultsController objectAtIndexPath:indexPath];
@@ -151,7 +153,7 @@
 	}
     
     return _fetchedResultsController;
-}    
+}
 
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller
 {

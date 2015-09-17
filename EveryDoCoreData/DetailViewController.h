@@ -7,12 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AddNewToDoVC.h"
 
 @class ToDo;
 
 @interface DetailViewController : UIViewController
 
 @property (strong, nonatomic) ToDo *detailItem;
+
+@property (nonatomic, weak) id <AddNewToDoDelegate> detailDelegate;
 
 @end
 
